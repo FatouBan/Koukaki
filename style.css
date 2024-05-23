@@ -1,0 +1,776 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+ /*** Image background ***/
+ .banner-container{
+  position: relative;
+ }
+
+ .banner {
+    background-image: none;
+    min-height: 0;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+/*** Video background ***/
+#video-bg {
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+#banner-img  {
+  display: none;
+}
+
+/*** Media query background ***/
+@media (max-width: 780px) {
+  #banner-img  {
+      display: block !important;
+  }
+}
+@media (max-width: 780px) {
+  #video-bg {
+      display: none !important;
+  }
+}
+
+/*** Keyframes logo flottement ***/
+@keyframes move-up{
+0% {
+  transform: translateY(600px);
+  opacity: 0;
+}
+
+100% {
+  transform: translateY(0);
+}
+}
+
+@keyframes float {
+0% {
+  transform: translate3d(6px, 6px, 0);
+}
+12% {
+  transform: translate3d(0px, 6px, 0);
+}
+24% {
+  transform: translate3d(6px, -4px, 0);
+}
+36% {
+  transform: translate3d(6px, 0px, 0);
+}
+48% {
+  transform: translate3d(-4px, -6px, 0);
+}
+60% {
+  transform: translate3d(0px, -4px, 0);
+}
+72% {
+  transform: translate3d(-8px, 6px, 0);
+}
+84% {
+  transform: translate3d(-4px, 0px, 0);
+}
+100% {
+  transform: translate3d(6px, 6px, 0);
+}
+}
+
+/*** Float chats navbar ***/
+@keyframes float2 {
+  0% {
+    transform: scale(0.7) translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: scale(0.7) translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: scale(0.7) translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: scale(0.7) translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: scale(0.7) translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: scale(0.7) translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: scale(0.7) translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: scale(0.7) translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: scale(0.7) translate3d(6px, 6px, 0);
+  }
+  }
+  /*** Titre les personnages ***/
+  .story #characters h3 {
+    right: 30%;
+    position: relative;
+  }
+
+/*** Swiper ***/
+.swiper {
+  width: 100%;
+  padding-top: 50px; 
+  padding-bottom: 80px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-color: none;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-coverflow {
+background: none !important;
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+  background-image:none;
+}
+
+  /*** Style du lieu ***/
+.story #place {
+	display: flex;
+	background-image: url("./assets/Studio_Koukaki-image_place.png");
+	width: 100%;
+	min-height: 699px;
+	background-size: cover;
+  position: relative;
+ }
+
+ .story #place > div {
+  left: 20px;
+  top: 200px;
+  position: absolute;
+ }
+
+#big_cloud {
+    filter: blur(10px);
+    position: relative;
+    top: -10em;
+    left: 110em;
+}
+
+#little_cloud {
+    filter: blur(10px);
+    position: relative;
+    top: -7em;
+    left: 90em;
+}
+
+.clouds{
+  position: static;
+}
+
+/*** Animation des titres et sections ***/
+@keyframes fade-in-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-30px); /*** Déplacement vers le haut de 30 pixels ***/
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-from-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(80px); /*** Déplacement vers le bas de 80 pixels ***/
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  .fade-from-top {
+    animation: fade-in-from-top 1s ease-in-out forwards;
+  }
+  
+  .fade-from-bottom {
+    animation: fade-in-from-bottom 1s ease-in-out forwards;
+  }
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    animation-delay: 0.5s;
+}
+
+/* Définition des keyframes pour l'animation */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translate3d(-50%, 50%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+
+/*** rotation fleurs ***/
+.story__article::after,
+.story h2::after,
+.site-footer ul::after,
+.nomination::before,
+.nomination::after,
+#studio h2::before,
+#studio h2::after {
+  animation: rotate-flowers 15s infinite linear;
+/*** Animation de rotation non stop ***/
+}
+
+@keyframes rotate-flowers {
+  from {
+    transform: rotate(0deg);
+/*** Rotation de départ ***/
+  }
+
+  to {
+    transform: rotate(360deg);
+/*** Rotation complète ***/
+  }
+}
+@keyframes rotate-flowers2 {
+  from {
+    transform: scale(0.3) rotate(0deg);
+/*** Rotation de départ ***/
+  }
+
+  to {
+    transform: scale(0.3) rotate(360deg);
+/*** Rotation complète ***/
+  }
+}
+
+@keyframes rotate-flowers3 {
+  from {
+    transform: scale(0.7) rotate(0deg);
+/*** Rotation de départ ***/
+  }
+
+  to {
+    transform: scale(0.7) rotate(360deg);
+/*** Rotation complète ***/
+  }
+}
+
+/*** div section studio ***/
+#studio > div {
+  padding: 20px;
+}
+
+/*** Section-finale des oscars ***/
+.section-finale{
+  margin: 150px;
+}
+.oscars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+.img_oscars {
+    width: 30%;
+    height: 100%;
+   }
+  
+.nomination {
+    text-align: left;
+    text-shadow: 2px 2px 4px #797676;
+    font-size: 35px;
+    background-image: url(../foce-child/assets/oscar.png);
+
+  }
+
+.nomination::before{
+  content: url(../foce-child/assets/Sunflower.png);
+  position: absolute;
+  left: -3em;
+  top: -4.5em;
+  transform: scale(0.7);
+}
+
+.nomination::after{
+  content: url(../foce/assets/images/orchid.png);
+  position: absolute;
+  right: -18em;
+  top: -4.5em;
+}
+
+.site-footer::before,
+.site-footer::after {
+  content: none;
+}
+
+/*** Menu Nav ***/
+#site-navigation {
+  position: relative;
+}
+
+.main-navigation.toggled ul{
+  display: flex !important;
+}
+
+.navbar-content ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  gap: 1em;
+}
+
+.navbar-content a:hover {
+  filter : drop-shadow(0px 0px 5px #ff5c00);
+}
+
+.navbar .navbar-content {
+  position: relative;
+  width: 100%;
+  height: 91vh;
+  background: #fff5e9;
+  display: none;
+}
+
+.navbar{
+  font-size: 38px;
+  color: black;
+  font-weight: 400;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.navbar-burger{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  gap: 8px;
+  padding: 0;
+  top: 0;
+  right: 5em;
+  cursor: pointer;
+}
+
+.logo-burger {
+  position: relative;
+  margin: 40px;
+}
+
+.navbar-content--story::before{
+  content: url(../foce-child/assets/cat.png);
+  position: absolute;
+  right: 25em;
+  bottom: 3em;
+  animation: float 7s 200ms infinite ease-in-out;
+  transform: scale(0.7);
+}
+
+.navbar-content--story::after{
+  content: url(../foce-child/assets/Sunflower.png);
+  position: absolute;
+  left: 24em;
+  bottom: 0em;
+  animation: rotate-flowers 15s linear infinite;
+}
+
+.navbar-content--characters::after{
+  content: url(../foce-child/assets/Random-Flower.png);
+  position: absolute;
+  left: 54em;
+  top: -2em;
+  animation: rotate-flowers2 15s linear infinite;
+}
+
+.navbar-content--place::before{
+  content: url(../foce-child/assets/chat-gris.png);
+  position: absolute;
+  left: 20em;
+  top: -4em;
+  animation: float 6s 200ms infinite ease-in-out;
+  transform: scale(0.6);
+}
+
+.navbar-content--place::after{
+  content: url(../foce-child/assets/Flower.png);
+  position: absolute;
+  right: 28em;
+  top: -2em;
+  animation: rotate-flowers 15s linear infinite;
+  transform: scale(0.5);
+}
+
+.navbar-content--footer::before {
+  content: url(../foce-child/assets/chat-roux.png);
+  position: absolute;
+  right: 30em;
+  animation: float 5s 300ms infinite ease-in-out;
+  bottom: 0;
+}
+
+.navbar-content--footer::after {
+  content: url(../foce/assets/images/hibiscus_footer.png);
+  position: absolute;
+  left: 500px;
+  bottom: -23.5em;
+  animation: rotate-flowers 15s linear infinite;;
+}
+
+.navbar-content::after {
+  content: url(../foce/assets/images/orchid.png);
+  position: absolute;
+  left: -4em;
+  top: 3em;
+  transform: scale(0.8);
+  animation: rotate-flowers 15s linear infinite;
+}
+
+.navbar-burger .line {
+  height: 3px;
+  background-color: #000;
+  display: block;
+  width: 100%;
+  margin: 0;
+  transition: all .3s ease-in-out;
+}
+
+.navbar-burger.close .line:first-child{
+  transform: rotate(45deg) translate3d(15px, 10px, 0);
+}
+
+.navbar-burger.close .line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-burger.close span.line:last-child {
+  transform: rotate(-45deg) translate3d(7px, 1px, 0);
+}
+
+.navbar li > a {
+  font-size: 3.1rem;
+  color: black;
+}
+
+.navbar li > a:hover {
+  font-weight: 500;
+}
+
+.navbar-content--footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  font-size: 20px;
+}
+
+/*** Media queries***/
+
+@media screen and (min-width: 320px) and (max-width:780px){
+  html{
+    overflow-x: hidden;
+  }
+  /*** Menu navbar ***/
+  .main-navigation ul {
+    display: flex !important;
+  }
+  .main-navigation{
+    height: 80px;
+  }
+  .main-navigation a{
+    display: block;
+  }
+  .navbar-burger{
+    position: absolute;
+    right: 2em;
+  }
+  .navbar {
+    font-size: 0;
+  }
+  .navbar li > a:hover {
+    font-weight: 500;
+}
+.navbar-content a:hover {
+  filter : drop-shadow(0px 0px 5px #ff5c00);
+}
+  .navbar-content::after {
+    position: absolute;
+    left: 8em;
+    animation: rotate-flowers3 15s linear infinite;
+}
+  .navbar-content--story::before {
+    position: absolute;
+    right: 20em;
+    bottom: 0.5em;
+}
+  .navbar-content--story::after {
+    position: absolute;
+    bottom: 5em;
+    left: 15em;
+    animation: rotate-flowers3 15s linear infinite;
+}
+  .navbar-content--place::before {
+    position: absolute;
+    left: 15em;
+}
+  .navbar-content--place::after {
+    position: absolute;
+    right: 17em;
+}
+  .navbar-content--characters::after {
+    position: absolute;
+    left: 23em;
+    top: -10em;
+}
+  .navbar-content--footer::before {
+    position: absolute;
+    right: 14em;
+    top: -5em;
+}
+.navbar-content--footer::after {
+  position: absolute;
+  left: 0;
+}
+  /*** Chats navbar ***/
+  .navbar-content--story::before{
+    animation: float2 7s infinite ease-in-out;
+  }
+  .navbar-content--place::before{
+    animation: float2 7s infinite ease-in-out;
+  }
+  .navbar-content--footer::before {
+    animation: float2 7s infinite ease-in-out;
+  }
+  /*** Logo ***/
+  .banner {
+    width: 50%;
+    top:15%;
+    animation: move-up 2s 300ms both, float 10s 2s infinite ease-in-out;
+  }
+  /*** Titre personnages***/
+  .story #characters h3{
+    right: 0;
+    position: relative;
+  }
+  /*** Nuages ***/
+  #big_cloud{
+    width: 50%;
+    position: relative;
+    top: -5em;
+    left: 15em;
+  }
+  #little_cloud{
+    width: 50%;
+    position: relative;
+    top: -6em;
+    left: 9em;
+  }
+
+/*** Studio ***/
+  .studio-title{
+    font-size: 30px;
+  }
+  #studio h2::before{
+    content: url(./assets/random_flower.png);
+    animation: rotate-flowers3 15s linear infinite;
+    position: absolute;
+    left: -20%;
+  }
+  #studio h2::after{
+    content: url(./assets/flower.png);
+    position: absolute;
+    right: 1%;
+  }
+  /*** Section finale ***/
+  .nomination{
+    font-size: 15px;
+    position: relative;
+    top: -5em;
+    background-size: 100%;
+  }
+  .oscars{
+    position: relative;
+    top: 10em;
+  }
+ 
+  .section-finale {
+    margin: 10px;
+}
+  .nomination::before {
+    transform: scale(0.5);
+    position: absolute;
+    top: -10em;  
+    left: -8em;
+    animation: rotate-flowers3 15s linear infinite;
+  }
+  .nomination::after{ 
+  position: absolute;
+  right: -20em;
+  top: -15em;
+  animation: rotate-flowers3 15s linear infinite;
+  }
+}
+
+@media screen and (min-width:780px) and (max-width: 900px){
+  html{
+    overflow-x: hidden;
+  }
+   /*** Menu navbar ***/
+   .main-navigation ul {
+    display: flex !important;
+  }
+  .main-navigation{
+    height: 80px;
+  }
+  .navbar {
+    font-size: 0;
+  }
+  .navbar li > a:hover {
+    font-weight: 500;
+}
+.navbar-content a:hover {
+  filter : drop-shadow(0px 0px 5px #ff5c00);
+}
+  .navbar-content::after {
+    position: absolute;
+    left: 8em;
+    animation: rotate-flowers3 15s linear infinite;
+}
+  .navbar-content--story::before {
+    position: absolute;
+    right: 20em;
+    bottom: 0.5em;
+}
+  .navbar-content--story::after {
+    position: absolute;
+    bottom: 5em;
+    animation: rotate-flowers3 15s linear infinite;
+}
+  .navbar-content--place::before {
+    position: absolute;
+    left: 15em;
+}
+  .navbar-content--place::after {
+    position: absolute;
+    right: 17em;
+    top: -1em;
+}
+  .navbar-content--characters::after {
+    position: absolute;
+    left: 33em;
+    top: -5em;
+}
+  .navbar-content--footer::before {
+    position: absolute;
+    right: 15em;
+}
+.navbar-content--footer::after {
+    position: absolute;
+    left: 10em;
+    bottom: -19em;
+}
+   /*** Chats navbar ***/
+   .navbar-content--story::before,
+   .navbar-content--place::before,
+   .navbar-content--footer::before {
+    animation: float2 7s infinite ease-in-out;
+  }
+  
+   /*** Logo ***/
+  .banner {
+    width: 50%;
+    top:15%;
+    animation: move-up 2s 300ms both, float 10s 2s infinite ease-in-out;
+  }
+  /*** Story-title***/
+  .story-title{
+    font-size: 50px;
+  }
+  /*** Titre personnages***/
+  .story #characters h3{
+    right: 10%;
+    position: relative;
+  }
+  /*** Nuages ***/
+  .story #place > div {
+    left: 100px;
+  }
+  #big_cloud{
+    width: 50%;
+    position: relative;
+    top: -8em;
+    left: 75em;
+  }
+  #little_cloud{
+    position: relative;
+    top: -8em;
+    left: 60em;
+  }
+  /*** Studio ***/
+  #studio h2::after{
+    content: url(./assets/flower.png);
+  }
+  #studio h2::before{
+    content: url(./assets/random_flower.png);
+    animation: rotate-flowers3 15s linear infinite;
+  }
+    /*** Section finale ***/
+  .nomination{
+    font-size: 20px;
+  }
+  .nomination::before {
+    position: absolute;
+    left: -7em;
+    top: -8.5em;
+    animation: rotate-flowers3 15s linear infinite;
+  }
+  .nomination::after{ 
+    position: absolute;
+    right: -20.5em;
+    top: -12.5em;
+    animation: rotate-flowers3 15s linear infinite;
+  }
+}
